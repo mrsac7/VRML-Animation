@@ -1,0 +1,285 @@
+#VRML V2.0 utf8
+# original stuff
+
+#land
+Transform {
+translation 100.0 0.0 0.0
+children [
+Shape {
+appearance Appearance { material Material { diffuseColor 0.274510 0.717647 0.286275 } }
+geometry Box { size 410 0.05 180 } }
+]}
+
+#viewpoints
+Viewpoint {
+position 0.0 150 150
+orientation 1 0 0 -0.785
+description "overview"}
+
+Viewpoint {
+position -100.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_0"}
+Viewpoint {
+position -90.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_1"}
+Viewpoint {
+position -80.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_2"}
+Viewpoint {
+position -70.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_3"}
+Viewpoint {
+position -60.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_4"}
+Viewpoint {
+position -50.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_5"}
+Viewpoint {
+position -40.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_6"}
+Viewpoint {
+position -30.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_7"}
+Viewpoint {
+position -20.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_8"}
+Viewpoint {
+position -10.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_9"}
+Viewpoint {
+position 0.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_10"}
+Viewpoint {
+position 10.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_11"}
+Viewpoint {
+position 20.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_12"}
+Viewpoint {
+position 30.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_13"}
+Viewpoint {
+position 40.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_14"}
+Viewpoint {
+position 50.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_15"}
+Viewpoint {
+position 60.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_16"}
+Viewpoint {
+position 70.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_17"}
+Viewpoint {
+position 80.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_18"}
+Viewpoint {
+position 90.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_19"}
+Viewpoint {
+position 100.000000 40 40
+orientation 1 0 0 -0.785
+description "nr_20"}
+
+#forest
+Transform {
+translation 0 0 0
+children [
+Inline { url "forest2.wrl" }
+]}
+
+Transform {
+translation 200 0 60
+scale -1 1 -1
+children [
+Inline { url "forest.wrl" }
+]}
+
+Transform {
+translation 0 0 60
+scale -1 1 -1
+children [
+Inline { url "forest.wrl" }
+]}
+
+Transform {
+translation 0 0 -60
+scale -1 1 -1
+children [
+Inline { url "forest.wrl" }
+]}
+
+#tracks
+Transform {
+translation 0.0 0.0 0.0
+children [
+Inline { url "tracks.wrl"}
+]}
+
+Transform {
+translation 200.0 0.0 0.0
+children [
+Inline { url "tracks.wrl"}
+]}
+
+Transform {
+translation 200.0 0.0 5.5
+children [
+Inline { url "tracks.wrl"}
+]}
+
+
+#TinkerCAD testing
+
+Transform {
+translation 0.0 0.0 0.0
+children [
+Inline { url "train_stopper.wrl"}
+]}
+
+Transform {
+translation 256.000000 1.00000 -12.000000
+scale -1 1 -1
+children [
+Inline { url "station.wrl"}]}
+
+#Lake
+
+Transform {
+translation 156.000000 0.10000 -50.000000
+scale 0.5 0.4 0.4
+children [
+Inline { url "lake.wrl"}
+]}
+
+Transform {
+translation 136.0 -2.5 -50.0
+scale 1.5 1.5 1.5
+children [
+DEF SAILBOAT_ROTATION Transform {
+rotation 0 0 0 0
+children [
+Inline { url "sailboat.wrl" }
+]}
+]}
+
+Transform {
+translation 166.0 0 -40.0
+rotation 0 1 0 0.7
+children [
+DEF BOAT_ROTATION Transform {
+rotation 0 0 0 0
+children [
+Inline { url "boat.wrl" }
+]}
+]}
+
+# Second train
+
+Transform {
+translation 290.0 0.2 0.0
+scale 1.6 1.6 1.6
+children [
+Transform {
+rotation 0 1 0 3.14
+children [
+Inline { url "water_train_trains.wrl" }
+]}
+]}
+
+Transform {
+translation 107.0 0.2 5.5
+scale 1.6 1.6 1.6
+children [
+Inline { url "water_train_trains.wrl" }
+]}
+
+# Airplane!
+
+
+Transform {
+translation 0 100 0
+children [
+DEF PLANE_MAIN_ROT Transform {
+center 0 0 0
+rotation 0 0 0 0
+children [
+Transform {
+translation 100 0 0
+children [
+Transform {
+rotation 0 1 0 0
+children [
+Transform {
+rotation 0 0 1 0.2
+children [
+Inline { url "airplane.wrl" }
+]}
+]}
+]}
+]}
+]}
+
+
+# Active Stuff
+DEF X TimeSensor {loop TRUE cycleInterval 50}
+DEF Y PositionInterpolator {
+key [0, 0.5, 1]
+keyValue [90 0 0, -90 0 0, 90 0 0]}
+Transform {
+translation 0 0.9 0
+children [
+DEF Z Transform {
+children [
+Inline { url "wagon1.wrl"}]}]}
+
+DEF PLANE_MAIN_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 45}
+
+DEF PLANE_MAIN_ROT_INTERPOLATOR OrientationInterpolator{
+key [0, 0.5, 1]
+keyValue [0 1 0 0,
+          0 1 0 3.14,
+          0 1 0 6.28]
+}
+
+DEF BOATS_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 10}
+
+DEF BOATS_ROTATION_INTERPOLATOR OrientationInterpolator {
+key [0, 0.25, 0.5, 0.75, 1]
+keyValue [1 0 0 0,
+          1 0 0 0.07
+          1 0 0 0
+          1 0 0 -0.07
+          1 0 0 0]
+}
+
+ROUTE X.fraction_changed TO Y.set_fraction
+ROUTE Y.value_changed TO Z.set_translation
+
+
+ROUTE PLANE_MAIN_TIME_SENSOR.fraction_changed TO PLANE_MAIN_ROT_INTERPOLATOR.set_fraction
+ROUTE PLANE_MAIN_ROT_INTERPOLATOR.value_changed TO PLANE_MAIN_ROT.set_rotation
+
+ROUTE BOATS_TIME_SENSOR.fraction_changed TO BOATS_ROTATION_INTERPOLATOR.set_fraction
+ROUTE BOATS_ROTATION_INTERPOLATOR.value_changed TO SAILBOAT_ROTATION.set_rotation
+ROUTE BOATS_ROTATION_INTERPOLATOR.value_changed TO BOAT_ROTATION.set_rotation

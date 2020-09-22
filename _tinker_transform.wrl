@@ -1,0 +1,7 @@
+# A template to apply to TinkerCAD models to transform them into useful coordinate space.
+# Apply manually to every model exported from TinkerCAD.
+Transform {
+rotation 1 0 0 -1.57
+children [
+#insert geometry here
+]}
