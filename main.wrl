@@ -6,7 +6,7 @@ Transform {
 translation 100.0 0.0 0.0
 children [
 Shape {
-appearance Appearance { material Material { diffuseColor 0.274510 0.717647 0.286275 } }
+	appearance Appearance { material Material { diffuseColor 0.274510 0.717647 0.286275 } texture ImageTexture { repeatS TRUE repeatT TRUE url "http://texturelib.com/Textures/grass/grass/grass_grass_0121_01_thumb.jpg"}}
 geometry Box { size 410 0.05 180 } }
 ]}
 
@@ -262,14 +262,14 @@ keyValue [0 1 0 0,
           0 1 0 6.28]
 }
 
-DEF BOATS_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 10}
+DEF BOATS_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 5}
 
 DEF BOATS_ROTATION_INTERPOLATOR OrientationInterpolator {
 key [0, 0.25, 0.5, 0.75, 1]
 keyValue [1 0 0 0,
-          1 0 0 0.07
+          1 0 0 0.17
           1 0 0 0
-          1 0 0 -0.07
+          1 0 0 -0.17
           1 0 0 0]
 }
 
