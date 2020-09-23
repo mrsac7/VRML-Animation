@@ -10,6 +10,15 @@ Shape {
 geometry Box { size 410 0.05 180 } }
 ]}
 
+DEF VIEWPOINT_TRANSLATION_INTERPOLATOR Transform {
+	children [
+		Viewpoint
+		{
+			position 0 40 40
+			orientation	1 0 0 -0.785
+		}
+	]
+}
 #viewpoints
 Viewpoint {
 position 0.0 150 150
@@ -242,10 +251,18 @@ Inline { url "airplane.wrl" }
 
 
 # Active Stuff
+DEF	Q TimeSensor { 
+cycleInterval 100 
+loop TRUE
+} 
 DEF X TimeSensor {loop TRUE cycleInterval 50}
 DEF Y PositionInterpolator {
 key [0, 0.5, 1]
 keyValue [90 0 0, -90 0 0, 90 0 0]}
+DEF	R PositionInterpolator {
+	key	[0,0.1,0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+	keyValue [0 40 40, 18 0 0, -90 0 0, 90 0 0, 120 50 50 , 140 0 -40, 200 60 60, 220 0 -20, 0 40 40]
+}
 Transform {
 translation 0 0.9 0
 children [
@@ -253,7 +270,7 @@ DEF Z Transform {
 children [
 Inline { url "wagon1.wrl"}]}]}
 
-DEF PLANE_MAIN_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 45}
+DEF PLANE_MAIN_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 4}
 
 DEF PLANE_MAIN_ROT_INTERPOLATOR OrientationInterpolator{
 key [0, 0.5, 1]
@@ -275,7 +292,8 @@ keyValue [1 0 0 0,
 
 ROUTE X.fraction_changed TO Y.set_fraction
 ROUTE Y.value_changed TO Z.set_translation
-
+ROUTE Q.fraction_changed TO	R.set_fraction
+ROUTE R.value_changed TO VIEWPOINT_TRANSLATION_INTERPOLATOR.translation
 
 ROUTE PLANE_MAIN_TIME_SENSOR.fraction_changed TO PLANE_MAIN_ROT_INTERPOLATOR.set_fraction
 ROUTE PLANE_MAIN_ROT_INTERPOLATOR.value_changed TO PLANE_MAIN_ROT.set_rotation
