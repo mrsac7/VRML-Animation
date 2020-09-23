@@ -8,6 +8,11 @@ children [
 Shape {
 	appearance Appearance {
 		material Material { }
+		texture	ImageTexture {
+			repeatS	TRUE
+			repeatT	TRUE
+			url	"https://i2.wp.com/www.auroragraphics.net/wp-content/uploads/2018/04/5155d200-2b09-9943-4803-52137b397308.png?fit=600%2C260&ssl=1"
+		}
 	}
 	geometry IndexedFaceSet {
 		coord Coordinate {
