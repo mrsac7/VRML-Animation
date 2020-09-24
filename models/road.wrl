@@ -13,7 +13,7 @@ Transform {
    appearance Appearance {
     texture ImageTexture {
      url [
-      "textures/road.jpg"
+      "../textures/road.jpg"
      ]
     }
     material Material {

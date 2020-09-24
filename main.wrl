@@ -9,7 +9,7 @@ Group {
 		source DEF ac AudioClip { 
 				loop FALSE
 				pitch 1.0
-				url "music.mp3"
+				url "sounds/music.mp3"
 		}
 		minBack 0
 		maxBack 10000
@@ -46,14 +46,14 @@ DEF	VIEWPOINT_POSITION_INTERPOLATOR Transform
 Transform {
 translation 0 0 -30
 children [
-Inline { url "forest2.wrl" }
+Inline { url "models/forest2.wrl" }
 ]}
 
 Transform {
 translation 0 0 -60
 scale -1 1 -1
 children [
-Inline { url "forest.wrl" }
+Inline { url "models/forest.wrl" }
 ]}
 
 Transform {
@@ -61,7 +61,7 @@ translation 260 0 45
 rotation 0 1 0 3.14
 scale 0.06 0.06 0.06
 children [
-Inline { url "building4.wrl" }
+Inline { url "models/building4.wrl" }
 ]}
 
 Transform {
@@ -69,7 +69,7 @@ translation 170 0 85
 rotation 0 1 0 -1.57
 scale 0.8 0.8 0.8
 children [
-Inline { url "Busstop.wrl" }
+Inline { url "models/Busstop.wrl" }
 ]}
 
 Transform {
@@ -77,7 +77,7 @@ translation -9 0 20
 rotation 0 1 0 1.57
 scale 1.5 1 8.5
 children [
-Inline { url "road.wrl" }
+Inline { url "models/road.wrl" }
 ]}
 
 Transform {
@@ -85,7 +85,7 @@ translation -9 0.1 43
 rotation 0 1 0 1.57
 scale 0.3 1 8.5
 children [
-Inline { url "divider.wrl" }
+Inline { url "models/divider.wrl" }
 ]}
 
 
@@ -94,33 +94,33 @@ translation -9 0 45
 rotation 0 1 0 1.57
 scale 1.5 1 8.5
 children [
-Inline { url "road.wrl" }
+Inline { url "models/road.wrl" }
 ]}
 
 
 Transform {
 translation 0 0 10
 children [
-Inline { url "cow.wrl" }
+Inline { url "models/cow.wrl" }
 ]}
 
 Transform {
 translation 15 0 15
 children [
-Inline { url "cow.wrl" }
+Inline { url "models/cow.wrl" }
 ]}
 
 Transform {
 translation -60 0 -15 
 children [
-Inline { url "cow.wrl" }
+Inline { url "models/cow.wrl" }
 ]}
 
 Transform {
 translation 130 0 -15 
 rotation 0 1 0 0.785
 children [
-Inline { url "cow.wrl" }
+Inline { url "models/cow.wrl" }
 ]}
 
 #tracks
@@ -128,32 +128,29 @@ Transform {
 translation 0.0 0.0 0.0
 scale 1 1.5 1.5
 children [
-Inline { url "tracks.wrl"}
+Inline { url "models/tracks.wrl"}
 ]}
 
 Transform {
 translation 200.0 0.0 0.0
 scale 1 1.5 1.5
 children [
-Inline { url "tracks.wrl"}
+Inline { url "models/tracks.wrl"}
 ]}
 
 Transform {
 translation 200.0 0.0 5.5
 scale 1 1.5 1.5
 children [
-Inline { url "tracks.wrl"}
+Inline { url "models/tracks.wrl"}
 ]}
 
 Transform {
 translation 0.0 0.0 5.5
 scale 1 1.5 1.5
 children [
-Inline { url "tracks.wrl"}
+Inline { url "models/tracks.wrl"}
 ]}
-
-
-#TinkerCAD testing
 
 
 Transform {
@@ -161,7 +158,7 @@ translation 256.000000 1.00000 -20.000000
 scale 0.06 0.06 0.06
 rotation 0 1 0 -1.57
 children [
-Inline { url "building4.wrl"}]}
+Inline { url "models/building4.wrl"}]}
 
 #Lake
 
@@ -169,7 +166,7 @@ Transform {
 translation 156.000000 0.10000 -50.000000
 scale 0.5 0.4 0.4
 children [
-Inline { url "lake.wrl"}
+Inline { url "models/lake.wrl"}
 ]}
 
 Transform {
@@ -179,7 +176,7 @@ children [
 DEF SAILBOAT_ROTATION Transform {
 rotation 0 0 0 0
 children [
-Inline { url "sailboat.wrl" }
+Inline { url "models/sailboat.wrl" }
 ]}
 ]}
 
@@ -191,7 +188,7 @@ DEF BOAT_ROTATION Transform {
 rotation 0 0 0 0
 scale 4 4 4
 children [
-Inline { url "boat.wrl" }
+Inline { url "models/boat.wrl" }
 ]}
 ]}
 
@@ -215,7 +212,7 @@ children [
 Transform {
 rotation 0 0 1 0.2
 children [
-Inline { url "airplane.wrl" }
+Inline { url "models/airplane.wrl" }
 ]}
 ]}
 ]}
@@ -234,7 +231,7 @@ children [
 DEF Z Transform {
 scale 1.5 1.5 1.5
 children [
-Inline { url "wagon1.wrl"}]}]}
+Inline { url "models/wagon1.wrl"}]}]}
 
 DEF X0 TimeSensor {loop TRUE cycleInterval 30}
 DEF Y0 PositionInterpolator {
@@ -249,7 +246,7 @@ translation 290.0 0.2 0.0
 scale 3.2 1.6 1.6
 rotation 0 1 0 3.14
 children [
-Inline { url "water_train_trains.wrl"}]}]}
+Inline { url "models/water_train_trains.wrl"}]}]}
 
 DEF X00 TimeSensor {loop TRUE cycleInterval 20}
 DEF Y00 PositionInterpolator {
@@ -266,7 +263,7 @@ children [
 Transform {
 	scale 2 2 2
 	children [
-	Inline { url "water_train_trains.wrl"}]}]}
+	Inline { url "models/water_train_trains.wrl"}]}]}
 	]
 }
 
@@ -289,7 +286,7 @@ DEF z1 Transform {
 translation -200 0 63
 rotation 0 1 0 -1.57
 children [
-Inline { url "f1car.wrl"}]}]}
+Inline { url "models/f1car.wrl"}]}]}
 
 DEF x2 TimeSensor {loop TRUE cycleInterval 20}
 DEF y2 PositionInterpolator {
@@ -301,7 +298,7 @@ DEF z2 Transform {
 translation -90 0 53
 rotation 0 1 0 -1.57
 children [
-Inline { url "f1car.wrl"}]}]}
+Inline { url "models/f1car.wrl"}]}]}
 
 DEF x3 TimeSensor {loop TRUE cycleInterval 200}
 DEF y3 PositionInterpolator {
@@ -314,7 +311,7 @@ translation 200 0 38
 rotation 0 1 0 -1.57
 scale 3 3 3
 children [
-Inline { url "AllenDutton.wrl"}]}]}
+Inline { url "models/AllenDutton.wrl"}]}]}
 
 DEF x4 TimeSensor {loop TRUE cycleInterval 100}
 DEF y4 PositionInterpolator {
@@ -327,7 +324,7 @@ translation -50 0 33
 rotation 0 1 0 1.57
 scale 3 3 3
 children [
-Inline { url "AllenDuttonRunning.wrl"}]}]}
+Inline { url "models/AllenDuttonRunning.wrl"}]}]}
 
 	
 	
