@@ -1,0 +1,739 @@
+#VRML V2.0 utf8
+DEF FORMULA Transform {
+              children [
+                  Transform {
+                    rotation 1 0 0 -1.57
+                    children [
+                        # "BACK WHEELS & AXIS"
+                        Group {
+                          children [
+                              Transform {
+                                rotation 1 0 0 1.57
+                                translation 0 -2.8 0
+                                children [
+                                    Group {
+                                      children [
+                                          DEF BACK Transform {
+                                            children [
+                                                DEF wheel1 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  translation 1.5 0 0
+                                                  children [
+                                                      # "OUTER WHEEL CYLINDER"
+                                                      DEF elastic Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor 0 0 0
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height 0.92
+                                                          radius 0.65
+                                                        }
+                                                      }
+                                                      # "INNER WHEEL CYLINDER"
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor .5 .5 .5
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height .92
+                                                          radius .45
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                Transform {
+                                                  translation 1.912 0 0
+                                                  children [
+                                                      DEF rad Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                          }
+                                                        }
+                                                        geometry Box {
+                                                          size 0.1 0.90 0.05
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                Transform {
+                                                  rotation 1 0 0 1.57
+                                                  translation 1.912 0 0
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                          }
+                                                        }
+                                                        geometry Box {
+                                                          size 0.1 0.90 0.05
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                DEF wheel2 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  translation -1.5 0 0
+                                                  children [
+                                                      # "OUTER WHEEL CYLINDER"
+                                                      USE elastic
+                                                      # "INNER WHEEL CYLINDER"
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor .5 .5 .5
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height .92
+                                                          radius .45
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                Transform {
+                                                  translation -1.912 0 0
+                                                  children [
+                                                      USE rad
+                                                  ]
+                                                }
+                                                Transform {
+                                                  rotation 1 0 0 1.57
+                                                  translation -1.912 0 0
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                          }
+                                                        }
+                                                        geometry Box {
+                                                          size 0.1 0.90 0.05
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                DEF axis1 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor 0 0 0
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height 3.96
+                                                          radius .12
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                            ]
+                                          }
+                                          DEF CLOCK1 TimeSensor {
+                                            cycleInterval 2
+                                            loop TRUE
+                                          }
+                                          DEF POS1 OrientationInterpolator {
+                                            key [ 0 0.5 1 ]
+                                            keyValue [ 1 0 0 0 1 0 0 -3.14 1 0 0 -6.28 ]
+                                          }
+                                      ]
+                                    }
+                                ]
+                              ROUTE CLOCK1.fraction_changed TO POS1.set_fraction
+                              ROUTE POS1.value_changed TO BACK.set_rotation
+                              }
+                          ]
+                        }
+                        # "FRONT WHEELS & AXIS"
+                        Group {
+                          children [
+                              Transform {
+                                rotation 1 0 0 1.57
+                                translation 0 2.65 0
+                                children [
+                                    Group {
+                                      children [
+                                          DEF FRONT Transform {
+                                            children [
+                                                DEF wheel3 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  translation 1.5 0 0
+                                                  children [
+                                                      # "OUTER WHEEL CYLINDER"
+                                                      DEF elastic1 Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor 0 0 0
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height 0.92
+                                                          radius 0.65
+                                                        }
+                                                      }
+                                                      # "INNER WHEEL CYLINDER"
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor .5 .5 .5
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height .92
+                                                          radius .45
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                Transform {
+                                                  translation 1.912 0 0
+                                                  children [
+                                                      USE rad
+                                                  ]
+                                                }
+                                                Transform {
+                                                  rotation 1 0 0 1.57
+                                                  translation 1.912 0 0
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                          }
+                                                        }
+                                                        geometry Box {
+                                                          size 0.1 .90 .05
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                DEF wheel4 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  translation -1.5 0 0
+                                                  children [
+                                                      # "OUTER WHEEL CYLINDER"
+                                                      USE elastic
+                                                      # "INNER WHEEL CYLINDER"
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor .5 .5 .5
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height .92
+                                                          radius .45
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                Transform {
+                                                  translation -1.912 0 0
+                                                  children [
+                                                      USE rad
+                                                  ]
+                                                }
+                                                Transform {
+                                                  rotation 1 0 0 1.57
+                                                  translation -1.912 0 0
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                          }
+                                                        }
+                                                        geometry Box {
+                                                          size 0.1 .90 .05
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                                DEF axis2 Transform {
+                                                  rotation 0 0 1 1.57
+                                                  children [
+                                                      Shape {
+                                                        appearance Appearance {
+                                                          material Material {
+                                                            diffuseColor 0 0 0
+                                                          }
+                                                        }
+                                                        geometry Cylinder {
+                                                          height 3.96
+                                                          radius .12
+                                                        }
+                                                      }
+                                                  ]
+                                                }
+                                            ]
+                                          }
+                                          DEF CLOCK2 TimeSensor {
+                                            cycleInterval 2
+                                            loop TRUE
+                                          }
+                                          DEF POS2 OrientationInterpolator {
+                                            key [ 0 0.5 1 ]
+                                            keyValue [ 1 0 0 0 1 0 0 -3.14 1 0 0 -6.28 ]
+                                          }
+                                      ]
+                                    ROUTE CLOCK2.fraction_changed TO POS2.set_fraction
+                                    ROUTE POS2.value_changed TO FRONT.set_rotation
+                                    }
+                                ]
+                              }
+                          ]
+                        }
+                        # "CAR BODY"
+                        Group {
+                          children [
+                              # "CAR BODY"
+                              Transform {
+                                scale 1 4 0.5
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 1 0 0
+                                        }
+                                      }
+                                      geometry Sphere {
+                                      }
+                                    }
+                                    Transform {
+                                      rotation 1 0 0 0
+                                      translation 0 0.2 0.976
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                                transparency .5
+                                              }
+                                              texture DEF nplogo ImageTexture {
+                                                url [ "nplogo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/nplogo.jpg" ]
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.7 .2 .0000001
+                                            }
+                                          }
+                                      ]
+                                    }
+                                ]
+                              }
+                              Group {
+                              }
+                              # "PILOT'S COVER SHELL"
+                              DEF COVER Transform {
+                                center 0 0 0.535
+                                scale .5 0.9 0.3
+                                translation 0 -1 0
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          transparency 0.55
+                                        }
+                                      }
+                                      geometry Sphere {
+                                        radius 1.3
+                                      }
+                                    }
+                                    DEF COVERSENS CylinderSensor {
+                                       # description "touch to activate"
+                                      diskAngle 0.262
+                                      maxAngle 3.57
+                                    }
+                                ]
+                              }
+                              # "PILOT'S HEAD"
+                              Transform {
+                                translation 0 -1.3 0.5
+                                children [
+                                    Viewpoint {
+                                      description "Driver"
+                                      orientation 1 0 0 1.350
+                                      position 0 0.25 -0.015
+                                    }
+                                    Transform {
+                                      rotation 1 0 0 1.67
+                                      translation 0 0.7 -0.2
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 1 0 0
+                                                transparency .5
+                                              }
+                                              texture ImageTexture {
+                                                url [ "front.jpg" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/front.jpg" ]
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.9 0.8 0.01
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    Transform {
+                                      rotation 1 0 0 1.67
+                                      translation 0 0.701 -0.2
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 1 0 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.9 0.8 0.01
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 1 0 0
+                                        }
+                                      }
+                                      geometry Sphere {
+                                        radius 0.25
+                                      }
+                                    }
+                                ]
+                              }
+                              # "FRONT-HORIZONTAL PANEL-TEXTURES "
+                              Transform {
+                                translation 0 3.80 -0.3
+                                children [
+                                    # "FRONT (HORIZONTAL) PANEL"
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 1 0 0
+                                        }
+                                      }
+                                      geometry Box {
+                                        size 3.94 .6 .03
+                                      }
+                                    }
+                                    # "FRONT-RIGHT (OUTER)VERTICAL PANEL"
+                                    Transform {
+                                      translation 0.35 -0.2 0.15
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size .03 0.16 0.28
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    # "FRONT-LEFT (OUTER)VERTICAL PANEL
+                                    Transform {
+                                      translation -0.35 -0.2 0.15
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size .03 0.16 0.28
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    # "BACK TEXT"
+                                    Transform {
+                                      rotation 0 0 1 -3.14
+                                      translation 1.40 -7.20 1.05
+                                      children [
+                                          Transform {
+                                            rotation 1 0 0 0.266
+                                            children [
+                                                Shape {
+                                                  appearance Appearance {
+                                                    material Material {
+                                                      diffuseColor 1 1 0
+                                                    }
+                                                  }
+                                                  geometry Text {
+                                                    string [ "MV-4204" ]
+                                                    fontStyle FontStyle {
+                                                      size .8
+                                                      style "BOLD"
+                                                    }
+                                                  }
+                                                }
+                                            ]
+                                          }
+                                      ]
+                                    }
+                                    # "FRONT RIGHT TEXT"
+                                    Transform {
+                                      rotation 0 0 1 -3.14
+                                      translation 2.2 0.2 0
+                                      children [
+                                          Transform {
+                                            translation .5 .020 0.05
+                                            children [
+                                                Shape {
+                                                  appearance Appearance {
+                                                    material Material {
+                                                      diffuseColor 1 1 0
+                                                    }
+                                                  }
+                                                  geometry Text {
+                                                    string [ "VRML" ]
+                                                    fontStyle FontStyle {
+                                                      size .4
+                                                      style "BOLD"
+                                                    }
+                                                  }
+                                                }
+                                            ]
+                                          }
+                                      ]
+                                    }
+                                    # "FRONT LEFT TEXT"
+                                    Transform {
+                                      rotation 0 0 1 3.14
+                                      translation -2.1 0.2 0
+                                      children [
+                                          Transform {
+                                            translation -1.5 0.01 0.05
+                                            children [
+                                                Shape {
+                                                  appearance Appearance {
+                                                    material Material {
+                                                      diffuseColor 1 1 0
+                                                    }
+                                                  }
+                                                  geometry Text {
+                                                    string [ "VRML" ]
+                                                    fontStyle FontStyle {
+                                                      size .4
+                                                      style "BOLD"
+                                                    }
+                                                  }
+                                                }
+                                            ]
+                                          }
+                                      ]
+                                    }
+                                    # "FRONT-RIGHT (INNER)VERTICAL PANEL
+                                    Transform {
+                                      translation 1.95 0.01 0.05
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.03 .6 .1
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    # "FRONT-LEFT (INNER)VERTICAL PANEL
+                                    Transform {
+                                      translation -1.95 0.01 0.05
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.03 .6 .1
+                                            }
+                                          }
+                                      ]
+                                    }
+                                ]
+                              }
+                              # "BACK (INCLINED) UPPER PANEL"
+                              Transform {
+                                rotation 1 0 0 -0.2
+                                translation 0 -3.57 0.75
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 1 0 0
+                                        }
+                                      }
+                                      geometry Box {
+                                        size 3.94 0.8 0.04
+                                      }
+                                    }
+                                    Transform {
+                                      translation 1.95 0 0.1
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.04 0.8 0.2
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    Transform {
+                                      translation -1.95 0 0.1
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 0.2 1 0
+                                              }
+                                            }
+                                            geometry Box {
+                                              size 0.04 0.8 0.2
+                                            }
+                                          }
+                                      ]
+                                    }
+                                ]
+                              }
+                              # "HORIZONTAL PART OF THE CAR"
+                              Transform {
+                                rotation 0 0 1 1.57
+                                scale 1 1 0.05
+                                translation 0 -0.15 0
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor .2 1 0
+                                        }
+                                        texture USE nplogo
+                                      }
+                                      geometry Cylinder {
+                                        height 3.95
+                                        radius 1.9
+                                      }
+                                    }
+                                    # "RIGHT TEXT"
+                                    Transform {
+                                      rotation 0 0 1 -3.14
+                                      translation 0.6 1.65 2
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 1 1 0
+                                              }
+                                            }
+                                            geometry Text {
+                                              string [ "NPS" ]
+                                              fontStyle FontStyle {
+                                                size .8
+                                                style "BOLD"
+                                              }
+                                            }
+                                          }
+                                      ]
+                                    }
+                                    # "LEFT TEXT"
+                                    Transform {
+                                      rotation 0 0 1 -6.28
+                                      translation -0.8 -1.65 2
+                                      children [
+                                          Shape {
+                                            appearance Appearance {
+                                              material Material {
+                                                diffuseColor 1 1 0
+                                              }
+                                            }
+                                            geometry Text {
+                                              string [ "NPS" ]
+                                              fontStyle FontStyle {
+                                                size .8
+                                                style "BOLD"
+                                              }
+                                            }
+                                          }
+                                      ]
+                                    }
+                                ]
+                              }
+                              # "BACK-LEFT VERTICAL PANEL"
+                              Transform {
+                                translation -0.42 -3.4 0.35
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0.2 1 0
+                                        }
+                                      }
+                                      geometry Box {
+                                        size .06 0.26 0.7
+                                      }
+                                    }
+                                ]
+                              }
+                              # "BACK-RIGHT VERTICAL PANEL"
+                              Transform {
+                                translation 0.42 -3.4 0.35
+                                children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0.2 1 0
+                                        }
+                                      }
+                                      geometry Box {
+                                        size .06 0.26 0.7
+                                      }
+                                    }
+                                ]
+                              }
+                              # "EXHAUST"
+                              Transform {
+                                translation 0.2 -3.88 0
+                                children [
+                                    DEF exhaust Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0 0 0
+                                        }
+                                      }
+                                      geometry Cylinder {
+                                        height .25
+                                        radius .05
+                                      }
+                                    }
+                                ]
+                              }
+                              # "EXHAUST"
+                              Transform {
+                                translation -0.2 -3.88 0
+                                children [
+                                    USE exhaust
+                                ]
+                              }
+                          ]
+                        ROUTE COVERSENS.rotation_changed TO COVER.set_rotation
+                        }
+                    ]
+                  }
+              ]
+}
